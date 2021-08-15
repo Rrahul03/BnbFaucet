@@ -16,7 +16,7 @@
         <div class="row">
 
           <div class="column">
-            <form id="submit-form" action="">
+            <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbx8rnnl_UQILig2IuyekzoKDFX6XAhhhYruFgMR/exec">
               <label for="address"><b>Metamask Address</b></label>
               <input type="text" id="address" name="name" placeholder="0xf3343..">
               <input type="submit" value="Submit">
@@ -37,24 +37,5 @@
             <li><a href="https://bscscan.com/address/0x4076147929353629EecC00f8621f58b9e8C46911" target="_blank">0x4076147929353629EecC00f8621f58b9e8C46911</li>
         </ul>
       </p>
-      <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbx8rnnl_UQILig2IuyekzoKDFX6XAhhhYruFgMR/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Request recieved,bnb will be sent in 24 hours")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Faucet is empty :(, You can always buy at binance.com")
-
-                }
-            })
-        })
-    </script>
 </body>
 </html>
