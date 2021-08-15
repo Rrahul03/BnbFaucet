@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> Bnb Faucet </title>
+</head>
+<body>
+    <div class="container">
+        <div style="color:blue;text-align:center;font-family:monaco;font-size:22px";
+          <h2>BNB Faucet</h2>
+          <p>Submit your binance smart chain address to recieve bnb</p>
+        </div>
+        <div class="row">
+
+          <div class="column">
+            <form id="submit-form" action="">
+              <label for="address"><b>Metamask Address</b></label>
+              <input type="text" id="address" name="name" placeholder="0xf3343..">
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+            <img src="pixel1.png" style="width:20%">
+          </div>
+        </div>
+      </div>
+      <p >
+        <ul style ="font-family:monaco;font-size:15p:line-height:1.9">
+            <li>Faucet created for anyone who is unable to build due to lack of bnb</li>
+            <li>Intention is to help new users who might not have enough for fees</li>
+            <li>This is a personal undertaking: Expecting bnb to only fund/last for 150-200 requests</li>
+            <li>You can find me at rrahulchandran.com or @rrahul_chandran(twitter) to connect</li>
+            <li>If anyone wants to help, they can always donate bnb to below address to keep faucet alive</li>
+            <li><a href="https://bscscan.com/address/0x4076147929353629EecC00f8621f58b9e8C46911" target="_blank">0x4076147929353629EecC00f8621f58b9e8C46911</li>
+        </ul>
+      </p>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbx8rnnl_UQILig2IuyekzoKDFX6XAhhhYruFgMR/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Request recieved,bnb will be sent in 24 hours")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Faucet is empty :(, You can always buy at binance.com")
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>
